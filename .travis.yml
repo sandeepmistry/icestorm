@@ -7,6 +7,6 @@ before_install:
       brew install libftdi0;
     fi
 script:
-  - STATIC=1 PREFIX=$PWD/root make
-  - STATIC=1 PREFIX=$PWD/root make install
+  - PREFIX=$PWD/root make
+  - PREFIX=$PWD/root make install
   - ls -l $PWD/root
