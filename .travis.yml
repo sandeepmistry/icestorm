@@ -10,3 +10,5 @@ script:
   - PREFIX=$PWD/root make
   - PREFIX=$PWD/root make install
   - ls -l $PWD/root
+  - otool -L $PWD/root/bin/*
+
