@@ -7,7 +7,7 @@ before_install:
       brew install libftdi0;
     fi
 script:
-  - PREFIX=$PWD/root make
+  - make
   - PREFIX=$PWD/root make install
   - ls -l $PWD/root
   - ls -l $PWD/root/bin
@@ -16,4 +16,4 @@ script:
   - cp /usr/local/opt/libusb-compat/lib/libusb-0.1.4.dylib $PWD/root/bin/.
   - cp /usr/local/opt/libusb/lib/libusb-1.0.0.dylib $PWD/root/bin/.
   - tar -cvzf icestorm.tar.gz root
-  - hexdump icestorm.tar.gz
+  - hexdump -ve '1/1 "%.2x"' icestorm.tar.gz
