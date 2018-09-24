@@ -10,5 +10,10 @@ script:
   - PREFIX=$PWD/root make
   - PREFIX=$PWD/root make install
   - ls -l $PWD/root
+  - ls -l $PWD/root/bin
   - otool -L $PWD/root/bin/*
-
+  - cp /usr/local/opt/libftdi0/lib/libftdi.1.dylib $PWD/root/bin/.
+  - cp /usr/local/opt/libusb-compat/lib/libusb-0.1.4.dylib $PWD/root/bin/.
+  - cp /usr/local/opt/libusb/lib/libusb-1.0.0.dylib $PWD/root/bin/.
+  - tar -cvzf icestorm.tar.gz root
+  - hexdump icestorm.tar.gz
