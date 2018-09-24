@@ -2,15 +2,15 @@ os:
   - osx
 language: cpp
 deploy:
-  provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
-  file: icestorm.tar.bz2
-  skip_cleanup: true
-  on:
-    repo: sandeepmistry/icestorm
-    branches:
-      only:
-        - master
+  - provider: releases
+    api_key: $GITHUB_OAUTH_TOKEN
+    file: icestorm.tar.bz2
+    skip_cleanup: true
+    on:
+      repo: sandeepmistry/icestorm
+      branches:
+        only:
+          - master
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
       brew update &&
