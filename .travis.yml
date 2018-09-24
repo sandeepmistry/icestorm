@@ -7,7 +7,10 @@ deploy:
   file: icestorm.tar.bz2
   skip_cleanup: true
   on:
-    tags: false
+    repo: sandeepmistry/icestorm
+    branches:
+      only:
+        - master
 before_install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
       brew update &&
