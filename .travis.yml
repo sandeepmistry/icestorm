@@ -15,5 +15,6 @@ script:
   - cp /usr/local/opt/libftdi0/lib/libftdi.1.dylib $PWD/root/bin/.
   - cp /usr/local/opt/libusb-compat/lib/libusb-0.1.4.dylib $PWD/root/bin/.
   - cp /usr/local/opt/libusb/lib/libusb-1.0.0.dylib $PWD/root/bin/.
-  - tar -cvzf icestorm.tar.gz root
-  - hexdump -ve '1/1 "%.2x"' icestorm.tar.gz
+  - tar -cvjSf icestorm.tar.bz2 root
+  - ls -l icestorm.tar.bz2
+  - hexdump -ve '1/1 "%.2x"' icestorm.tar.bz2
