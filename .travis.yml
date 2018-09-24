@@ -26,7 +26,7 @@ script:
   - install_name_tool -id libftdi.1.dylib $PWD/root/bin/libftdi.1.dylib
   - install_name_tool -id libusb-0.1.4.dylib $PWD/root/bin/libusb-0.1.4.dylib
   - install_name_tool -id libusb-1.0.0.dylib $PWD/root/bin/libusb-1.0.0.dylib
-  - install_name_tool -change /usr/local/lib/libusb-1.0.0.dylib "@executable_path/libusb-1.0.0.dylib" $PWD/root/bin/libusb-0.1.4.dylib
+  - install_name_tool -change /usr/local/opt/libusb/lib/libusb-1.0.0.dylib "@executable_path/libusb-1.0.0.dylib" $PWD/root/bin/libusb-0.1.4.dylib
   - install_name_tool -change /usr/local/opt/libusb-compat/lib/libusb-0.1.4.dylib "@executable_path/libusb-0.1.4.dylib" $PWD/root/bin/libftdi.1.dylib
   - chmod -w $PWD/root/bin/*.dylib
   - install_name_tool -change /usr/local/opt/libftdi0/lib/libftdi.1.dylib "@executable_path/libftdi.1.dylib" root/bin/iceprog
